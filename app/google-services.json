@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "545231290012",
+    "firebase_url": "https://meu-menu-86071-default-rtdb.firebaseio.com",
+    "project_id": "meu-menu-86071",
+    "storage_bucket": "meu-menu-86071.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545231290012:android:3f7b210947d8e1111cb759",
+        "android_client_info": {
+          "package_name": "br.com.meumenu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545231290012-7orvf7b61kb186c492upj1rnpqqhlaui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVR3LWVm7J6fItVpPw54T9yLowYyvbHSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545231290012-7orvf7b61kb186c492upj1rnpqqhlaui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
