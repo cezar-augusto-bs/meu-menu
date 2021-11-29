@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeuMenu">
         <activity
+            android:name=".CriarRestauranteActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <activity
+            android:name=".CadastroActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
