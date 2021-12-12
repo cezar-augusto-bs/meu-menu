@@ -13,7 +13,7 @@
             android:name=".RestaurantRegistratedActivity"
             android:exported="true" />
         <activity
-            android:name=".RestaurantRegitrationActivity"
+            android:name=".RestaurantRegistrationActivity"
             android:exported="true" />
         <activity
             android:name=".RestaurantListActivity"

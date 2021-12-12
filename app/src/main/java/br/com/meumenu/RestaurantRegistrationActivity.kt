@@ -3,23 +3,20 @@ package br.com.meumenu
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.meumenu.model.Restaurant
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_restaurant_regitration.*
 
-class RestaurantRegitrationActivity : AppCompatActivity() {
+class RestaurantRegistrationActivity : AppCompatActivity() {
 
-    private lateinit var database: DatabaseReference
+    private val database = FirebaseDatabase.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant_regitration)
 
-        database = Firebase.database.reference
-
         btn_salvarRestaurante.setOnClickListener {
             if(txt_nomeRestaurante.text.toString().isNotEmpty()){
-                writeNewRestaurant()
+                //writeNewRestaurant()
             }else{
 
             }
@@ -31,6 +28,6 @@ class RestaurantRegitrationActivity : AppCompatActivity() {
         val restaurante = Restaurant()
         restaurante.name = nomeRestaurante.toString()
 
-        database.child("restaurants").child(restId).setValue(restaurant)
+        database.reference.child("restaurants").setValue(restaurant)
     }
 }

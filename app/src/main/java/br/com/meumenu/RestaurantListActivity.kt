@@ -11,7 +11,7 @@ class RestaurantListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_restaurant)
 
         btn_irCadastrar2.setOnClickListener {
-            startActivity(Intent(this, RestaurantRegitrationActivity::class.java))
+            startActivity(Intent(this, RestaurantRegistrationActivity::class.java))
         }
     }
 }
