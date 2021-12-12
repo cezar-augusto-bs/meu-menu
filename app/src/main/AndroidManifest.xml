@@ -10,13 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeuMenu">
         <activity
-            android:name=".CreateRestaurantActivity"
+            android:name=".RestaurantRegistratedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RestaurantRegitrationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RestaurantListActivity"
             android:exported="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".SignupActivity"
             android:exported="true">

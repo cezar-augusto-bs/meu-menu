@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        startActivity(Intent(this, CreateRestaurantActivity::class.java))
+                        startActivity(Intent(this, RestaurantListActivity::class.java))
                     } else {
                         Toast.makeText(this@MainActivity, "Login inválido", Toast.LENGTH_LONG).show()
                     };
