@@ -1,11 +1,9 @@
 package br.com.meumenu.model
 
-class Restaurant {
-    var name : String = ""
+import android.graphics.Bitmap
 
-    constructor(){}
+data class Restaurant (var name: String = ""/*, val profilePic: Bitmap*/){
 
-    constructor(name: String){
-        this.name = name
-    }
+
+
 }

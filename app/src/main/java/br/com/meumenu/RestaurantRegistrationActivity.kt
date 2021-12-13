@@ -29,8 +29,6 @@ class RestaurantRegistrationActivity : AppCompatActivity() {
 
             if(txt_nomeRestaurante.text.toString().isNotEmpty()){
                 writeNewRestaurant(restaurant)
-                val rest = Restaurant(nomeRestaurant.toString())
-                restaurantsGlobal.add(rest)
                 startActivity(Intent(this, RestaurantListActivity::class.java))
             }else{
                 txt_nomeRestaurante.error = "Voce precisa colocar um nome para o restaurante"

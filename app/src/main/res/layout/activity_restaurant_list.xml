@@ -23,11 +23,12 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler1"
+        android:id="@+id/restaurant_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/app_bar"
         android:background="#65E4A6"
-        android:layout_below="@id/app_bar"/>
+        tools:listitem="@layout/restaurant_item"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_add_restaurant"
