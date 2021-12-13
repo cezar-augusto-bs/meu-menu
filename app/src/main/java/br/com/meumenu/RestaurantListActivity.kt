@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.meumenu.model.Restaurant
 import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
 import kotlinx.android.synthetic.main.activity_restaurant_list.*
 
 class RestaurantListActivity : AppCompatActivity() {
@@ -37,28 +38,22 @@ class RestaurantListActivity : AppCompatActivity() {
 
         dbref = FirebaseDatabase.getInstance().getReference("restaurants")
 
-        dbref.addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-
-                if(snapshot.exists()){
-
-                    for (restSnapshot in snapshot.children){
-
-                        val restaurant = restSnapshot.getValue(Restaurant::class.java)
-                        restaurantArraylist.add(restaurant!!)
-
+        val restaurantListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if(dataSnapshot.exists()){
+                    for (snapshot in dataSnapshot.children){
+                        val restaurant = dataSnapshot.getValue<Restaurant>()
+                        if (restaurant != null) {
+                            restaurantArraylist.add(restaurant)
+                        }
                     }
-
                     restaurantRecyclerView.adapter = RestaurantAdapter(restaurantArraylist)
                 }
-
             }
-
-            override fun onCancelled(error: DatabaseError) {
+            override fun onCancelled(databaseError: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
-
-        })
+        }
+        dbref.addValueEventListener(restaurantListener)
     }
 }
