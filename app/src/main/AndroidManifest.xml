@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeuMenu">
         <activity
+            android:name=".MenuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="true" />
+        <activity
             android:name=".RestaurantRegistratedActivity"
             android:exported="true" />
         <activity
