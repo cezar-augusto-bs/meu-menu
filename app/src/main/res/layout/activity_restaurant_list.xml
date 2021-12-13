@@ -28,7 +28,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/app_bar"
         android:background="#65E4A6"
-        tools:listitem="@layout/restaurant_item"/>
+        tools:listitem="@layout/restaurant_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_add_restaurant"

@@ -22,7 +22,7 @@
 
             <ImageView
                 android:id="@+id/img_restaurant"
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/ic_baseline_camera_alt_24"
                 />
