@@ -20,7 +20,8 @@
             android:layout_height="wrap_content"
             android:text="Adicionar pratos"
             tools:layout_editor_absoluteX="190dp"
-            tools:layout_editor_absoluteY="145dp" />
+            tools:layout_editor_absoluteY="145dp"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
