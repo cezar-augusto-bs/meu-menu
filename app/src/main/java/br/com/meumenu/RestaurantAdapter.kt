@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.meumenu.model.Restaurant
 
-class RestaurantAdapter(private val restaurantList : ArrayList<Restaurant>) : RecyclerView.Adapter<RestaurantAdapter.MyViewHolder>() {
+class RestaurantAdapter(private val restaurantList: ArrayList<Restaurant>) : RecyclerView.Adapter<RestaurantAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
