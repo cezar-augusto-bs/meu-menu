@@ -27,8 +27,7 @@
                 android:id="@+id/img_restaurant"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/ic_baseline_camera_alt_24"
-                />
+                android:src="@drawable/ic_baseline_camera_alt_24" />
 
         </LinearLayout>
 
@@ -55,10 +54,12 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
 
+
         </LinearLayout>
 
 
     </LinearLayout>
+
 
 
 

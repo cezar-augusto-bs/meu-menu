@@ -14,11 +14,11 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toll_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/white"
             android:theme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="@string/app_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            app:title="@string/app_name" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -31,6 +31,7 @@
         android:background="#65E4A6"
         tools:listitem="@layout/restaurant_item" />
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_add_restaurant"
         android:layout_width="wrap_content"
@@ -39,6 +40,20 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_baseline_add_24"
+        android:tint="@android:color/holo_red_dark"
+        app:backgroundTint="@color/white"
+        app:rippleColor="@android:color/darker_gray"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_ir_menu_list2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="80dp"
         android:src="@drawable/ic_baseline_add_24"
         android:tint="@android:color/holo_red_dark"
         app:backgroundTint="@color/white"

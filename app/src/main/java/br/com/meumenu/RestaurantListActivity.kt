@@ -33,6 +33,10 @@ class RestaurantListActivity : AppCompatActivity() {
         btn_add_restaurant.setOnClickListener {
             startActivity(Intent(this, RestaurantRegistrationActivity::class.java))
         }
+
+        btn_ir_menu_list2.setOnClickListener {
+            startActivity(Intent(this, MenuListActivity::class.java))
+        }
     }
 
     private fun getRestaurantData() {
