@@ -8,34 +8,39 @@
 
     <EditText
         android:id="@+id/txt_cadastro_prato_nome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="311dp"
+        android:layout_height="48dp"
         android:layout_marginTop="268dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/rounded_edittex_border"
         android:ems="10"
-        android:hint="nome"
+        android:hint="   Nome"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txt_cadastro_prato_preco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txt_cadastro_prato_preco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="311dp"
+        android:layout_height="48dp"
         android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_edittex_border"
         android:ems="10"
-        android:hint="R$00,00"
+        android:hint="   R$00,00"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/txt_cadastro_prato_nome"
         app:layout_constraintTop_toBottomOf="@+id/txt_cadastro_prato_nome" />
 
     <EditText
         android:id="@+id/txt_cadastro_prato_descricao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="311dp"
+        android:layout_height="48dp"
         android:layout_marginTop="31dp"
+        android:background="@drawable/rounded_edittex_border"
         android:ems="10"
-        android:hint="Descrição"
+        android:hint="   Descrição"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/txt_cadastro_prato_preco"
         app:layout_constraintTop_toBottomOf="@+id/txt_cadastro_prato_preco" />
@@ -52,7 +57,7 @@
     <Spinner
         android:id="@+id/spn_cadastro_prato_categoria"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
