@@ -46,9 +46,7 @@ class RestaurantRegistrationActivity : AppCompatActivity() {
     }
 
     private fun writeNewRestaurant(restaurant: Restaurant) {
-        val userUid = getCurrentUser()
-        val child = "restaurants/$userUid"
-        database.reference.child("restaurants").setValue(restaurant)
+        database.getReference("restaurants").setValue(restaurant)
     }
     private fun getCurrentUser(): String? {
         val user = auth.currentUser;

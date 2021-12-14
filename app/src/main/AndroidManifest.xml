@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeuMenu">
         <activity
-            android:name=".MenuActivity"
+            android:name=".MenuRegistrationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MenuListActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity2"

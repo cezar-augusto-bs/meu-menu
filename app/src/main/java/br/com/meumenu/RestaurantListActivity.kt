@@ -9,6 +9,7 @@ import br.com.meumenu.model.Restaurant
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 import kotlinx.android.synthetic.main.activity_restaurant_list.*
+import kotlinx.android.synthetic.main.restaurant_item.*
 
 class RestaurantListActivity : AppCompatActivity() {
 
@@ -31,6 +32,10 @@ class RestaurantListActivity : AppCompatActivity() {
 
         btn_add_restaurant.setOnClickListener {
             startActivity(Intent(this, RestaurantRegistrationActivity::class.java))
+        }
+
+        btn_add_novo_prato.setOnClickListener {
+            startActivity(Intent(this, MenuListActivity::class.java))
         }
     }
 
