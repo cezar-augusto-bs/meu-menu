@@ -8,10 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MeuMenu">
-        <activity
-            android:name=".RestaurantRegistratedActivity"
-            android:exported="true" />
+        android:theme="@style/Theme.AppCompat">
         <activity
             android:name=".RestaurantRegistrationActivity"
             android:exported="true" />

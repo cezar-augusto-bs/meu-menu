@@ -18,11 +18,11 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        btn_cancelarCadastro.setOnClickListener {
+        cancel.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
-        btn_salvarCadastro.setOnClickListener {
+        signup.setOnClickListener {
             val user = setUserData()
 
             auth.createUserWithEmailAndPassword(user.email, user.password)
@@ -36,9 +36,9 @@ class SignupActivity : AppCompatActivity() {
         }
     }
     private fun setUserData() : User {
-        val email = txt_emailCadastro.text.toString();
-        val name = txt_nomeCadastro.text.toString();
-        val password = txt_senhaCadastro.text.toString();
+        val email = email.text.toString();
+        val name = name.text.toString();
+        val password = password.text.toString();
 
         val user = User()
         user.email = email;

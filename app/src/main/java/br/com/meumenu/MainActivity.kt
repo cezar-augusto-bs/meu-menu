@@ -15,13 +15,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn_irCadastro.setOnClickListener {
+        signup_btn.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
         }
 
-        btn_logar.setOnClickListener {
-            val email = txt_emailLogin.text.toString();
-            val password = txt_senhaLogin.text.toString();
+        signin.setOnClickListener {
+            val email = email_login.text.toString();
+            val password = password_login.text.toString();
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->

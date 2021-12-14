@@ -1,47 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity"
-    android:background="#E59F16">
+    android:background="#FEC14A"
+    tools:context=".RestaurantListActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
+
+    <ImageView
+        android:layout_width="142dp"
+        android:layout_height="142dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
+        android:src="@drawable/ic_action_name" />
+
 
     <EditText
-        android:id="@+id/txt_nomeCadastro"
+        android:id="@+id/name"
         android:layout_width="310dp"
         android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="239dp"
         android:background="@color/white"
-        android:hint="Nome"
+        android:hint="@string/name"
         android:textAlignment="center"
+        app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377" />
+        app:layout_constraintVertical_bias="0.596"
+        tools:cornerRadius="16dp" />
 
     <EditText
-        android:id="@+id/txt_senhaCadastro"
+        android:id="@+id/email"
         android:layout_width="310dp"
         android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="299dp"
         android:background="@color/white"
-        android:hint="Senha"
+        android:hint="@string/email"
         android:textAlignment="center"
+        app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
+        app:layout_constraintVertical_bias="0.479" />
 
     <EditText
-        android:id="@+id/txt_emailCadastro"
+        android:id="@+id/password"
         android:layout_width="310dp"
         android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="359dp"
         android:background="@color/white"
-        android:hint="Email"
+        android:hint="@string/password"
         android:textAlignment="center"
+        app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -50,21 +74,15 @@
         app:layout_constraintVertical_bias="0.479" />
 
     <Button
-        android:id="@+id/btn_salvarCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Salvar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698" />
-
-    <Button
-        android:id="@+id/btn_cancelarCadastro"
-        android:layout_width="122dp"
-        android:layout_height="48dp"
-        android:text="Cancelar"
+        android:id="@+id/signup"
+        android:layout_width="232dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="419dp"
+        android:width="232dp"
+        android:text="@string/signin"
+        app:backgroundTint="@color/black"
+        app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -72,5 +90,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.808" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="232dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="479dp"
+        android:width="232dp"
+        android:text="@string/signin"
+        app:backgroundTint="@color/black"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808" />
+</RelativeLayout>

@@ -1,105 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#E59F16">
+    android:background="#FEC14A"
+    tools:context=".RestaurantListActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
+
 
     <EditText
-        android:id="@+id/txt_emailLogin"
-        android:layout_width="235dp"
+        android:id="@+id/email_login"
+        android:layout_width="310dp"
         android:layout_height="48dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginEnd="76dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textWebEmailAddress|textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="264dp"
+        android:background="@color/white"
+        android:hint="@string/email"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/txt_senhaLogin"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintVertical_bias="0.479" />
 
     <EditText
-        android:id="@+id/txt_senhaLogin"
-        android:layout_width="235dp"
+        android:id="@+id/password_login"
+        android:layout_width="310dp"
         android:layout_height="48dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginEnd="76dp"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="324dp"
+        android:background="@color/white"
+        android:hint="@string/password"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/btn_logar"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869" />
+        app:layout_constraintVertical_bias="0.479" />
 
     <Button
-        android:id="@+id/btn_logar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="20dp"
+        android:id="@+id/signin"
+        android:layout_width="232dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="384dp"
+        android:width="232dp"
         android:text="Entrar"
-        app:cornerRadius="15dp"
+        app:backgroundTint="@color/black"
+        app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+        app:layout_constraintVertical_bias="0.808" />
 
     <Button
-        android:id="@+id/btn_irCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="144dp"
-        android:text="Cadastrar"
+        android:id="@+id/signup_btn"
+        android:layout_width="232dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="470dp"
+        android:width="232dp"
+        android:text="@string/signup"
+        app:backgroundTint="@color/black"
+        app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702" />
+        app:layout_constraintVertical_bias="0.808" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="215dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="99dp"
-        android:layout_marginEnd="99dp"
-        android:text="-------------- OU --------------"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_irCadastro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946" />
 
     <Button
-        android:id="@+id/btn_logarGoogle"
+        android:id="@+id/google_login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="103dp"
-        android:layout_marginEnd="103dp"
-        android:text="Logar com o Google"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="528dp"
+        android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/google_icon"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/white"
+        android:padding="8dp"
+        android:text="@string/login_google"
+        android:textAllCaps="false"
+        android:textColor="@color/GoogleTextColor"
+        android:textStyle="bold"
+        app:icon="@drawable/google_icon" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
