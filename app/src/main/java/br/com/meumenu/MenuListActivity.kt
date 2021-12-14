@@ -1,5 +1,6 @@
 package br.com.meumenu
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.meumenu.model.Menu
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
+import kotlinx.android.synthetic.main.activity_menu_list.*
+import kotlinx.android.synthetic.main.restaurant_item.*
 
 class MenuListActivity : AppCompatActivity() {
 
@@ -25,7 +28,9 @@ class MenuListActivity : AppCompatActivity() {
         menuArraylist = ArrayList<Menu>()
         getMenuData()
 
-
+        btn_add_prato.setOnClickListener {
+            startActivity(Intent(this, MenuRegistrationActivity::class.java))
+        }
     }
 
     private fun getMenuData() {

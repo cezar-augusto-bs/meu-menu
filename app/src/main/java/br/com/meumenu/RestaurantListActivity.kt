@@ -3,6 +3,7 @@ package br.com.meumenu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.meumenu.model.Restaurant
@@ -13,7 +14,7 @@ import kotlinx.android.synthetic.main.restaurant_item.*
 
 class RestaurantListActivity : AppCompatActivity() {
 
-    private lateinit var dbref : DatabaseReference
+    private val database = FirebaseDatabase.getInstance()
     private lateinit var restaurantRecyclerView: RecyclerView
     private lateinit var restaurantArraylist: ArrayList<Restaurant>
 
@@ -26,39 +27,33 @@ class RestaurantListActivity : AppCompatActivity() {
         restaurantRecyclerView.layoutManager = LinearLayoutManager(this)
         restaurantRecyclerView.setHasFixedSize(true)
 
-
         restaurantArraylist = arrayListOf<Restaurant>()
         getRestaurantData()
 
         btn_add_restaurant.setOnClickListener {
             startActivity(Intent(this, RestaurantRegistrationActivity::class.java))
         }
-
-        btn_add_novo_prato.setOnClickListener {
-            startActivity(Intent(this, MenuListActivity::class.java))
-        }
     }
 
     private fun getRestaurantData() {
-
-        dbref = FirebaseDatabase.getInstance().getReference("restaurants")
-
-        val restaurantListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if(dataSnapshot.exists()){
-                    for (snapshot in dataSnapshot.children){
-                        val restaurant = dataSnapshot.getValue<Restaurant>()
-                        if (restaurant != null) {
-                            restaurantArraylist.add(restaurant)
+            val restaurantListener = object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        for (snapshot in dataSnapshot.children) {
+                            val restaurant = dataSnapshot.getValue<Restaurant>()
+                            if (restaurant != null) {
+                                restaurantArraylist.add(restaurant)
+                            }
                         }
+                        restaurantRecyclerView.adapter = RestaurantAdapter(restaurantArraylist)
                     }
-                    restaurantRecyclerView.adapter = RestaurantAdapter(restaurantArraylist)
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    TODO("Not yet implemented")
                 }
             }
-            override fun onCancelled(databaseError: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        }
-        dbref.addValueEventListener(restaurantListener)
+            database.reference.child("restaurants").addValueEventListener(restaurantListener)
+
     }
 }
