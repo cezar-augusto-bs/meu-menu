@@ -19,7 +19,7 @@
         tools:listitem="@layout/menu_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_add_prato"
+        android:id="@+id/btn_add_prato_arroz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

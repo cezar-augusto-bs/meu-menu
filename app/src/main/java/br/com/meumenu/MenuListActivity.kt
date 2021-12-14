@@ -19,17 +19,21 @@ class MenuListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_list)
+        try {
+            setContentView(R.layout.activity_menu_list)
 
-        menuRecyclerView = findViewById(R.id.menu_list)
-        menuRecyclerView.layoutManager = LinearLayoutManager(this)
-        menuRecyclerView.setHasFixedSize(true)
+            menuRecyclerView = findViewById(R.id.menu_list)
+            menuRecyclerView.layoutManager = LinearLayoutManager(this)
+            menuRecyclerView.setHasFixedSize(true)
 
-        menuArraylist = ArrayList<Menu>()
-        getMenuData()
+            menuArraylist = ArrayList<Menu>()
+            getMenuData()
 
-        btn_add_prato.setOnClickListener {
-            startActivity(Intent(this, MenuRegistrationActivity::class.java))
+            btn_add_prato_arroz.setOnClickListener {
+                startActivity(Intent(this, MenuRegistrationActivity::class.java))
+            }
+        } catch(error: Exception) {
+            var res = error
         }
     }
 
