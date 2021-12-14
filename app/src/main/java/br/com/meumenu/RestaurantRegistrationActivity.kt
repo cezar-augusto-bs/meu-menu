@@ -25,7 +25,6 @@ class RestaurantRegistrationActivity : AppCompatActivity() {
 
         btn_salvarRestaurante.setOnClickListener {
             val restaurant = setRestaurantData()
-            val nomeRestaurant = txt_nomeRestaurante
 
             if(txt_nomeRestaurante.text.toString().isNotEmpty()){
                 writeNewRestaurant(restaurant)
