@@ -71,7 +71,7 @@ class MenuRegistrationActivity : AppCompatActivity() {
     }
 
     private fun writeNewPrato(menu : Menu){
-        database.getReference("restaurants").setValue(menu)
+        database.getReference("menu").setValue(menu)
     }
 
     private fun getCurrentUser(): String? {
