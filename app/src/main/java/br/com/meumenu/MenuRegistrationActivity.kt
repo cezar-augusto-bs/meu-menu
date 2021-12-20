@@ -26,14 +26,12 @@ class MenuRegistrationActivity : AppCompatActivity() {
 
         val spnPratoCategoria = arrayOf("Entrada", "Pratos", "Bebidas", "Bebidas alcoolicas", "Sobremesa")
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spnPratoCategoria)
+        var pratoCategoria : String = ""
 
         spn_cadastro_prato_categoria.adapter = arrayAdapter
 
-        var pratoCategoria : String = ""
+        spn_cadastro_prato_categoria.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
 
-        spn_cadastro_prato_categoria.onItemSelectedListener = object :
-
-        AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 pratoCategoria = spnPratoCategoria[p2]
             }
@@ -45,7 +43,7 @@ class MenuRegistrationActivity : AppCompatActivity() {
         }
 
         btn_salvar_prato.setOnClickListener {
-            val prato = setPratoData()
+            val prato = setPratoData(pratoCategoria)
 
             if(txt_cadastro_prato_descricao.text.toString().isNotEmpty() && txt_cadastro_prato_nome.text.toString().isNotEmpty() && txt_cadastro_prato_preco.text.toString().isNotEmpty() && spn_cadastro_prato_categoria.isNotEmpty()){
                 writeNewPrato(prato)
@@ -56,7 +54,7 @@ class MenuRegistrationActivity : AppCompatActivity() {
         }
     }
 
-    private fun setPratoData() : Menu {
+    private fun setPratoData(categoria : String) : Menu {
 
         var nomePrato = txt_cadastro_prato_nome.text.toString()
         var precoPrato = txt_cadastro_prato_preco.text.toString()
@@ -66,6 +64,7 @@ class MenuRegistrationActivity : AppCompatActivity() {
         menu.nome = nomePrato
         menu.descricao = descricao
         menu.preco = precoPrato.toFloat()
+        menu.categoria = categoria
 
         return menu
     }

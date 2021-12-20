@@ -67,8 +67,14 @@
         android:id="@+id/btn_salvar_prato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="110dp"
         android:text="Salvar"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="573dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cadastro_prato_descricao"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
