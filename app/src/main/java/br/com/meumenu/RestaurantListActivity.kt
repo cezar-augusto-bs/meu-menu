@@ -44,7 +44,7 @@ class RestaurantListActivity : AppCompatActivity() {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     if (dataSnapshot.exists()) {
                         for (snapshot in dataSnapshot.children) {
-                            val restaurant = dataSnapshot.getValue<Restaurant>()
+                            val restaurant = snapshot.getValue<Restaurant>()
                             if (restaurant != null) {
                                 restaurantArraylist.add(restaurant)
                             }

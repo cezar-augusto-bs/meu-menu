@@ -44,7 +44,7 @@ class MenuListActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if(dataSnapshot.exists()){
                     for (snapshot in dataSnapshot.children){
-                        val menu = dataSnapshot.getValue<Menu>()
+                        val menu = snapshot.getValue<Menu>()
                         if (menu != null) {
                             menuArraylist.add(menu)
                         }
