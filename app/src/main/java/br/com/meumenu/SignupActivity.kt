@@ -29,8 +29,10 @@ class SignupActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     writeUserDatabase(user)
+                    Toast.makeText(this@SignupActivity, "Usuario Cadastrado com sucesso", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, MainActivity::class.java))
                 } else {
-                    Toast.makeText(this@SignupActivity, "Error: $task", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@SignupActivity, "Error: Insira um email valido!", Toast.LENGTH_LONG).show()
                 }
             }
         }
