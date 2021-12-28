@@ -40,6 +40,7 @@ class RestaurantRegistrationActivity : AppCompatActivity() {
 
         val restaurant = Restaurant()
         restaurant.name = nomeRestaurante
+        restaurant.userId = getCurrentUser().toString()
 
         return restaurant
     }

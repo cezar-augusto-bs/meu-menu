@@ -70,7 +70,7 @@ class MenuRegistrationActivity : AppCompatActivity() {
     }
 
     private fun writeNewPrato(menu : Menu){
-        database.getReference("menu").setValue(menu)
+        database.getReference().child("menu").push().setValue(menu)
     }
 
     private fun getCurrentUser(): String? {
