@@ -72,6 +72,12 @@
                     android:text="Descrição"/>
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R$"
+                    android:layout_marginRight="3dp"/>
+
+                <TextView
                     android:id="@+id/txt_descricao_prato"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
