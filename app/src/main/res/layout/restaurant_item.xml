@@ -53,14 +53,8 @@
                 android:text="teste"
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
-
-
         </LinearLayout>
-
-
     </LinearLayout>
-
-
 
 
 </androidx.cardview.widget.CardView>

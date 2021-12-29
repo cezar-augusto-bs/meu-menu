@@ -4,16 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import br.com.meumenu.util.AuthUtil
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_signup.*
 
 class MainActivity : AppCompatActivity() {
-    private val auth = FirebaseAuth.getInstance()
+    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        if(AuthUtil.userIsLoggedIn()) {
+            goToRestaurantList()
+        }
 
         signup_btn.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
@@ -32,5 +37,9 @@ class MainActivity : AppCompatActivity() {
                     };
                 }
         }
+    }
+
+    private fun goToRestaurantList() {
+        startActivity(Intent(this, RestaurantListActivity::class.java))
     }
 }

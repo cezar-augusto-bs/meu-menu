@@ -2,17 +2,12 @@ package br.com.meumenu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import br.com.meumenu.model.Restaurant
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_restaurant_regitration.*
-import android.R.id
 
 import android.content.Intent
-
-
-
 
 class RestaurantRegistrationActivity : AppCompatActivity() {
 
@@ -46,7 +41,7 @@ class RestaurantRegistrationActivity : AppCompatActivity() {
     }
 
     private fun writeNewRestaurant(restaurant: Restaurant) {
-        database.getReference().child("restaurants").push().setValue(restaurant)
+        database.reference.child("restaurants").push().setValue(restaurant)
     }
     private fun getCurrentUser(): String? {
         val user = auth.currentUser;

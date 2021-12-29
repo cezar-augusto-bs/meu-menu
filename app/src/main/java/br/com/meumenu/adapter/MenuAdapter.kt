@@ -1,4 +1,4 @@
-package br.com.meumenu
+package br.com.meumenu.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import br.com.meumenu.R
 import br.com.meumenu.model.Menu
 
 class MenuAdapter(private val menuList : ArrayList<Menu>) : RecyclerView.Adapter<MenuAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.menu_item, parent, false)
-        return MenuAdapter.MyViewHolder(itemView)
+        return MyViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
