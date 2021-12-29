@@ -18,12 +18,9 @@ class MenuAdapter(private val menuList : ArrayList<Menu>) : RecyclerView.Adapter
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = menuList[position]
 
-        holder.nomePrato.text = currentItem.nome
-        holder.precoPrato.text = (currentItem.preco).toString()
-        holder.descricaoPrato.text = currentItem.descricao
-        //holder.imgPrato     >>>>fazer holder para imagem do prato<<<<<<
-
-
+        holder.nomePrato.text = currentItem.name
+        holder.precoPrato.text = (currentItem.price).toString()
+        holder.descricaoPrato.text = currentItem.description
     }
 
     override fun getItemCount(): Int {

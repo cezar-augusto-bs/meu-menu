@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.meumenu.`interface`.ClickListener
@@ -23,73 +22,78 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
 
 class RestaurantListActivity : AppCompatActivity() {
+    private val TAG = "RESTAURANT-LIST"
+
     private val database = FirebaseDatabase.getInstance()
     private lateinit var currentUser: String
-    private lateinit var restaurantsRecyclerView: RecyclerView
 
+    private lateinit var restaurantRecyclerView: RecyclerView
     private lateinit var restaurantAdapter: RestaurantAdapter
-    private lateinit var listRestaurants: ArrayList<Restaurant>
+    private lateinit var restaurantList: ArrayList<Restaurant>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant_list)
+        try {
 
-        currentUser = AuthUtil.getCurrentUser().toString()
+            currentUser = AuthUtil.getCurrentUser().toString()
 
-        initRestaurantListRecyclerView()
-        setRestaurantListRecyclerView()
-        setRedirectButtonsOnClickListener()
+            initRestaurantRecyclerView()
+            setRestaurantRecyclerView()
+            configureButtonsOnClickListener()
+        }catch (exception : Exception) {
+            Log.e(TAG, "Exception: $exception")
+        }
     }
 
-    private fun initRestaurantListRecyclerView() {
-        restaurantsRecyclerView = findViewById(R.id.restaurant_list)
-        restaurantsRecyclerView.layoutManager = LinearLayoutManager(this)
-        restaurantsRecyclerView.setHasFixedSize(true)
+    private fun initRestaurantRecyclerView() {
+        restaurantRecyclerView = findViewById(R.id.restaurant_list)
+        restaurantRecyclerView.layoutManager = LinearLayoutManager(this)
+        restaurantRecyclerView.setHasFixedSize(true)
     }
 
-    private fun setRestaurantListRecyclerView() {
+    private fun setRestaurantRecyclerView() {
         val restaurantListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                var listRestaurants: ArrayList<Restaurant> = createListRestaurants(dataSnapshot)
-                setListRestaurantsAdapter(listRestaurants)
+                setRestaurantList(dataSnapshot)
+                setRestaurantAdapter()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                Log.d("Error", "Error load restaurants: $databaseError")
+                Log.d("Error", "Error load restaurant: $databaseError")
             }
         }
 
         database
-            .getReference("restaurants")
+            .getReference("restaurant")
             .orderByChild("userId")
             .equalTo(currentUser)
             .addValueEventListener(restaurantListener)
     }
 
-    private fun createListRestaurants(dataSnapshot: DataSnapshot) : ArrayList<Restaurant> {
-        listRestaurants = arrayListOf<Restaurant>()
+    private fun setRestaurantList(dataSnapshot: DataSnapshot) {
+        restaurantList = arrayListOf<Restaurant>()
         if (dataSnapshot.exists()) {
             for (snapshot in dataSnapshot.children) {
                 val restaurant = snapshot.getValue<Restaurant>()
                 if (restaurant != null) {
                     restaurant.id = snapshot.key
-                    listRestaurants.add(restaurant)
+                    restaurantList.add(restaurant)
                 }
             }
         }
-        return listRestaurants
     }
 
-    private fun setListRestaurantsAdapter(listRestaurants : ArrayList<Restaurant>){
-        restaurantAdapter = RestaurantAdapter(listRestaurants)
-        restaurantsRecyclerView.adapter = restaurantAdapter
+    private fun setRestaurantAdapter(){
+        restaurantAdapter = RestaurantAdapter(restaurantList)
+        restaurantRecyclerView.adapter = restaurantAdapter
         setItemOnClickListenerRecyclerView()
     }
 
     private fun setItemOnClickListenerRecyclerView() {
         restaurantAdapter.setOnItemClickListener(object : ClickListener {
             override fun onItemClick(v: View, position: Int) {
-                var selectedAdapterItem = restaurantAdapter.getItem(position)
+                val selectedAdapterItem = restaurantAdapter.getItem(position)
                 goToRestaurantMenu(selectedAdapterItem)
             }
         })
@@ -101,7 +105,7 @@ class RestaurantListActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun setRedirectButtonsOnClickListener() {
+    private fun configureButtonsOnClickListener() {
         btn_add_restaurant.setOnClickListener {
             startActivity(Intent(this, RestaurantRegistrationActivity::class.java))
         }

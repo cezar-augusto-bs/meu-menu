@@ -51,7 +51,7 @@ class SignupActivity : AppCompatActivity() {
 
     private fun writeUserDatabase(user: User) {
         val userUid = getCurrentUser()
-        val child = "users/$userUid"
+        val child = "user/$userUid"
         database.reference.child(child).setValue(user)
     }
 
