@@ -17,7 +17,7 @@ import com.google.firebase.database.ktx.getValue
 import kotlinx.android.synthetic.main.activity_menu_list.*
 import java.lang.Exception
 
-class MenuListActivity : AppCompatActivity() {
+class   MenuListActivity : AppCompatActivity() {
     private val TAG = "MENU-LIST"
 
     private val database = FirebaseDatabase.getInstance()
