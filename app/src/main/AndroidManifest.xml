@@ -13,9 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeuMenu">
         <activity
-            android:name=".MenuQrcodeActivity"
-            android:exported="true" />
-        <activity
             android:name=".MenuRegistrationActivity"
             android:exported="true" />
         <activity

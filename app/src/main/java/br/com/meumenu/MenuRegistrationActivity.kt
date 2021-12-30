@@ -189,7 +189,7 @@ class MenuRegistrationActivity : AppCompatActivity() {
 
     private fun updateItemMenu(downloadUri: String) {
         database
-            .getReference("itemRestaurant/$itemRestaurantId/imageUrl")
+            .getReference("itemRestaurant/$itemRestaurantId/imageSrc")
             .setValue(downloadUri)
     }
 
