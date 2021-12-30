@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MenuRegistrationActivity">
 
+
+    <ImageView
+        android:id="@+id/image_item_menu"
+        android:layout_width="244dp"
+        android:layout_height="169dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_baseline_restaurant_menu_24"
+        app:layout_constraintBottom_toTopOf="@+id/txt_cadastro_prato_nome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/txt_cadastro_prato_nome"
         android:layout_width="311dp"
