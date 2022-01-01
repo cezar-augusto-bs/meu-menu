@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.meumenu.R
 import br.com.meumenu.model.Menu
+import com.squareup.picasso.Picasso
 
 class MenuAdapter(private val menuList : ArrayList<Menu>) : RecyclerView.Adapter<MenuAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -21,6 +22,9 @@ class MenuAdapter(private val menuList : ArrayList<Menu>) : RecyclerView.Adapter
         holder.nomePrato.text = currentItem.name
         holder.precoPrato.text = (currentItem.price).toString()
         holder.descricaoPrato.text = currentItem.description
+        if(currentItem.imageSrc != "") {
+            Picasso.get().load(currentItem.imageSrc).into(holder.imgPrato);
+        }
     }
 
     override fun getItemCount(): Int {

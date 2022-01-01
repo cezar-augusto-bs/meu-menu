@@ -7,5 +7,6 @@ data class Menu(
     var categoryId : Int? = null,
     var name : String = "",
     var description : String = "",
-    var price : Float = 0.0f
+    var price : Float = 0.0f,
+    var imageSrc: String = ""
 )
